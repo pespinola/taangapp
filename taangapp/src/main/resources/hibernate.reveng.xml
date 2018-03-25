@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="taangapp" match-schema="public"/>
+  <table-filter match-name="tipo_documento"/>
+  <table-filter match-name="marca"/>
+  <table-filter match-name="usuario"/>
+  <table-filter match-name="factura_cabecera"/>
+  <table-filter match-name="expediente"/>
+  <table-filter match-name="tramite"/>
+  <table-filter match-name="cliente"/>
+  <table-filter match-name="documento"/>
+  <table-filter match-name="plan_pago"/>
+  <table-filter match-name="pais"/>
+  <table-filter match-name="estado_marca"/>
+  <table-filter match-name="evento"/>
+  <table-filter match-name="rol"/>
+  <table-filter match-name="tipo_marca"/>
+  <table-filter match-name="abogado"/>
+  <table-filter match-name="factura_detalle"/>
+  <table-filter match-name="historial"/>
+  <table-filter match-name="clase"/>
+</hibernate-reverse-engineering>

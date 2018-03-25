@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/taangapp</property>
+    <property name="hibernate.connection.username">postgres</property>
+    <property name="hibernate.connection.password">bdatos</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
+    <mapping resource="modelo/Documento.hbm.xml"/>
+    <mapping resource="modelo/Rol.hbm.xml"/>
+    <mapping resource="modelo/FacturaDetalle.hbm.xml"/>
+    <mapping resource="modelo/Abogado.hbm.xml"/>
+    <mapping resource="modelo/EstadoMarca.hbm.xml"/>
+    <mapping resource="modelo/Tramite.hbm.xml"/>
+    <mapping resource="modelo/TipoMarca.hbm.xml"/>
+    <mapping resource="modelo/Clase.hbm.xml"/>
+    <mapping resource="modelo/Cliente.hbm.xml"/>
+    <mapping resource="modelo/Pais.hbm.xml"/>
+    <mapping resource="modelo/Usuario.hbm.xml"/>
+    <mapping resource="modelo/Expediente.hbm.xml"/>
+    <mapping resource="modelo/Historial.hbm.xml"/>
+    <mapping resource="modelo/TipoDocumento.hbm.xml"/>
+    <mapping resource="modelo/PlanPago.hbm.xml"/>
+    <mapping resource="modelo/FacturaCabecera.hbm.xml"/>
+    <mapping resource="modelo/Evento.hbm.xml"/>
+    <mapping resource="modelo/Marca.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-mar-2018 19:23:00 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.PlanPago" table="plan_pago" schema="public" optimistic-lock="version">
+        <id name="nombreCuenta" type="big_decimal">
+            <column name="nombre_cuenta" precision="131089" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="facturaCabecera" class="modelo.FacturaCabecera" fetch="select">
+            <column name="id_fact_cab" precision="131089" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="monto" type="big_decimal">
+            <column name="monto" precision="131089" scale="0" not-null="true" />
+        </property>
+        <property name="vencimiento" type="date">
+            <column name="vencimiento" length="13" not-null="true" />
+        </property>
+        <property name="fechaPago" type="date">
+            <column name="fecha_pago" length="13" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

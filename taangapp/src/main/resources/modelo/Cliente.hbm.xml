@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-mar-2018 19:23:00 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.Cliente" table="cliente" schema="public" optimistic-lock="version">
+        <id name="idCliente" type="big_decimal">
+            <column name="id_cliente" precision="131089" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="usuario" class="modelo.Usuario" fetch="select">
+            <column name="id_usuario" precision="131089" scale="0" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="15" not-null="true" />
+        </property>
+        <property name="apellido" type="string">
+            <column name="apellido" length="20" not-null="true" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="40" not-null="true" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="telefono" length="12" not-null="true" />
+        </property>
+        <property name="ci" type="java.lang.Integer">
+            <column name="ci" precision="8" scale="0" />
+        </property>
+        <property name="ruc" type="string">
+            <column name="ruc" />
+        </property>
+        <property name="estado" type="string">
+            <column name="estado" />
+        </property>
+        <set name="facturaCabeceras" table="factura_cabecera" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_cliente" precision="131089" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="modelo.FacturaCabecera" />
+        </set>
+        <set name="expedientes" table="expediente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_cliente" precision="131089" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="modelo.Expediente" />
+        </set>
+    </class>
+</hibernate-mapping>
