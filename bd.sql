@@ -473,7 +473,7 @@ INSERT INTO rol (id_rol, descripcion) VALUES (1, 'Cliente');
 -- Data for Name: usuario; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO usuario (id_usuario, id_rol, cuenta, password) VALUES (1, 1, 'marcecv', 'rosperra');
+
 
 
 --
