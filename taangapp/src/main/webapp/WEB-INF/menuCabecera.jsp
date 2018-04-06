@@ -1,9 +1,12 @@
+
 <%@page import="modelo.Usuario"%>
 <% Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");%>
 <div class="container-fluid">
     <br>
     <div class="row">
-        <div class="col-10"></div>
+        <div class="col-10">
+            <img class="mb-4 img-fluid" src="imagenes/estudioJuridico.png" alt="Servicios legales Paraguay"></img>
+        </div>
         <div class="col">
             <div class="text-center">
                 <i class="fa fa-user-circle"></i>

@@ -5,6 +5,7 @@ modelo\Documento.class
 modelo\PlanPago.class
 modelo\FacturaCabecera.class
 modelo\FacturaDetalle.class
+controlador\ClienteServlet.class
 filtro\IniciarSesion.class
 modelo\HibernateUtil.class
 modelo\Tramite.class
