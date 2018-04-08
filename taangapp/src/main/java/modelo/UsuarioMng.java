@@ -5,18 +5,16 @@
  */
 package modelo;
 
-import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
 /**
  *
- * @author Acer
+ * @author Pathy
  */
 public class UsuarioMng {
-
-    Session session = null;
+      Session session = null;
     public String mess = "";
 
     public UsuarioMng() {
@@ -50,5 +48,4 @@ public class UsuarioMng {
 
         return usuario;
     }
-
 }

@@ -1,5 +1,5 @@
 package modelo;
-// Generated 12-mar-2018 19:22:49 by Hibernate Tools 4.3.1
+// Generated Apr 7, 2018 6:38:18 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -16,8 +16,8 @@ public class Usuario  implements java.io.Serializable {
      private Rol rol;
      private String cuenta;
      private String password;
-     private Set<Cliente> clientes = new HashSet<Cliente>(0);
-     private Set<Abogado> abogados = new HashSet<Abogado>(0);
+     private Set clientes = new HashSet(0);
+     private Set abogados = new HashSet(0);
 
     public Usuario() {
     }
@@ -26,7 +26,7 @@ public class Usuario  implements java.io.Serializable {
     public Usuario(BigDecimal idUsuario) {
         this.idUsuario = idUsuario;
     }
-    public Usuario(BigDecimal idUsuario, Rol rol, String cuenta, String password, Set<Cliente> clientes, Set<Abogado> abogados) {
+    public Usuario(BigDecimal idUsuario, Rol rol, String cuenta, String password, Set clientes, Set abogados) {
        this.idUsuario = idUsuario;
        this.rol = rol;
        this.cuenta = cuenta;
@@ -63,18 +63,18 @@ public class Usuario  implements java.io.Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    public Set<Cliente> getClientes() {
+    public Set getClientes() {
         return this.clientes;
     }
     
-    public void setClientes(Set<Cliente> clientes) {
+    public void setClientes(Set clientes) {
         this.clientes = clientes;
     }
-    public Set<Abogado> getAbogados() {
+    public Set getAbogados() {
         return this.abogados;
     }
     
-    public void setAbogados(Set<Abogado> abogados) {
+    public void setAbogados(Set abogados) {
         this.abogados = abogados;
     }
 

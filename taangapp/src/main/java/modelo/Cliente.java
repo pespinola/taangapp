@@ -1,5 +1,5 @@
 package modelo;
-// Generated 12-mar-2018 19:22:49 by Hibernate Tools 4.3.1
+// Generated Apr 7, 2018 6:38:18 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -21,8 +21,8 @@ public class Cliente  implements java.io.Serializable {
      private Integer ci;
      private String ruc;
      private String estado;
-     private Set<FacturaCabecera> facturaCabeceras = new HashSet<FacturaCabecera>(0);
-     private Set<Expediente> expedientes = new HashSet<Expediente>(0);
+     private Set facturaCabeceras = new HashSet(0);
+     private Set expedientes = new HashSet(0);
 
     public Cliente() {
     }
@@ -35,7 +35,7 @@ public class Cliente  implements java.io.Serializable {
         this.direccion = direccion;
         this.telefono = telefono;
     }
-    public Cliente(BigDecimal idCliente, Usuario usuario, String nombre, String apellido, String direccion, String telefono, Integer ci, String ruc, String estado, Set<FacturaCabecera> facturaCabeceras, Set<Expediente> expedientes) {
+    public Cliente(BigDecimal idCliente, Usuario usuario, String nombre, String apellido, String direccion, String telefono, Integer ci, String ruc, String estado, Set facturaCabeceras, Set expedientes) {
        this.idCliente = idCliente;
        this.usuario = usuario;
        this.nombre = nombre;
@@ -112,18 +112,18 @@ public class Cliente  implements java.io.Serializable {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    public Set<FacturaCabecera> getFacturaCabeceras() {
+    public Set getFacturaCabeceras() {
         return this.facturaCabeceras;
     }
     
-    public void setFacturaCabeceras(Set<FacturaCabecera> facturaCabeceras) {
+    public void setFacturaCabeceras(Set facturaCabeceras) {
         this.facturaCabeceras = facturaCabeceras;
     }
-    public Set<Expediente> getExpedientes() {
+    public Set getExpedientes() {
         return this.expedientes;
     }
     
-    public void setExpedientes(Set<Expediente> expedientes) {
+    public void setExpedientes(Set expedientes) {
         this.expedientes = expedientes;
     }
 

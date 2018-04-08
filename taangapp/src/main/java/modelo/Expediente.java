@@ -1,5 +1,5 @@
 package modelo;
-// Generated 12-mar-2018 19:22:49 by Hibernate Tools 4.3.1
+// Generated Apr 7, 2018 6:38:18 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -16,8 +16,8 @@ public class Expediente  implements java.io.Serializable {
      private Abogado abogado;
      private Cliente cliente;
      private BigDecimal nroExpediente;
-     private Set<Documento> documentos = new HashSet<Documento>(0);
-     private Set<Marca> marcas = new HashSet<Marca>(0);
+     private Set documentos = new HashSet(0);
+     private Set marcas = new HashSet(0);
 
     public Expediente() {
     }
@@ -29,7 +29,7 @@ public class Expediente  implements java.io.Serializable {
         this.cliente = cliente;
         this.nroExpediente = nroExpediente;
     }
-    public Expediente(BigDecimal idExpediente, Abogado abogado, Cliente cliente, BigDecimal nroExpediente, Set<Documento> documentos, Set<Marca> marcas) {
+    public Expediente(BigDecimal idExpediente, Abogado abogado, Cliente cliente, BigDecimal nroExpediente, Set documentos, Set marcas) {
        this.idExpediente = idExpediente;
        this.abogado = abogado;
        this.cliente = cliente;
@@ -66,18 +66,18 @@ public class Expediente  implements java.io.Serializable {
     public void setNroExpediente(BigDecimal nroExpediente) {
         this.nroExpediente = nroExpediente;
     }
-    public Set<Documento> getDocumentos() {
+    public Set getDocumentos() {
         return this.documentos;
     }
     
-    public void setDocumentos(Set<Documento> documentos) {
+    public void setDocumentos(Set documentos) {
         this.documentos = documentos;
     }
-    public Set<Marca> getMarcas() {
+    public Set getMarcas() {
         return this.marcas;
     }
     
-    public void setMarcas(Set<Marca> marcas) {
+    public void setMarcas(Set marcas) {
         this.marcas = marcas;
     }
 

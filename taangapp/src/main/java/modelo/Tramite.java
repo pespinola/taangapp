@@ -1,5 +1,5 @@
 package modelo;
-// Generated 12-mar-2018 19:22:49 by Hibernate Tools 4.3.1
+// Generated Apr 7, 2018 6:38:18 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -15,7 +15,7 @@ public class Tramite  implements java.io.Serializable {
      private BigDecimal idTramite;
      private BigDecimal precio;
      private String nombre;
-     private Set<FacturaDetalle> facturaDetalles = new HashSet<FacturaDetalle>(0);
+     private Set facturaDetalles = new HashSet(0);
 
     public Tramite() {
     }
@@ -26,7 +26,7 @@ public class Tramite  implements java.io.Serializable {
         this.precio = precio;
         this.nombre = nombre;
     }
-    public Tramite(BigDecimal idTramite, BigDecimal precio, String nombre, Set<FacturaDetalle> facturaDetalles) {
+    public Tramite(BigDecimal idTramite, BigDecimal precio, String nombre, Set facturaDetalles) {
        this.idTramite = idTramite;
        this.precio = precio;
        this.nombre = nombre;
@@ -54,11 +54,11 @@ public class Tramite  implements java.io.Serializable {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public Set<FacturaDetalle> getFacturaDetalles() {
+    public Set getFacturaDetalles() {
         return this.facturaDetalles;
     }
     
-    public void setFacturaDetalles(Set<FacturaDetalle> facturaDetalles) {
+    public void setFacturaDetalles(Set facturaDetalles) {
         this.facturaDetalles = facturaDetalles;
     }
 

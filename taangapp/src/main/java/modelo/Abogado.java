@@ -1,5 +1,5 @@
 package modelo;
-// Generated 12-mar-2018 19:22:49 by Hibernate Tools 4.3.1
+// Generated Apr 7, 2018 6:38:18 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -20,8 +20,8 @@ public class Abogado  implements java.io.Serializable {
      private String telefono;
      private Integer ci;
      private String ruc;
-     private Set<Expediente> expedientes = new HashSet<Expediente>(0);
-     private Set<Historial> historials = new HashSet<Historial>(0);
+     private Set expedientes = new HashSet(0);
+     private Set historials = new HashSet(0);
 
     public Abogado() {
     }
@@ -34,7 +34,7 @@ public class Abogado  implements java.io.Serializable {
         this.direccion = direccion;
         this.telefono = telefono;
     }
-    public Abogado(BigDecimal idAbogado, Usuario usuario, String nombre, String apellido, String direccion, String telefono, Integer ci, String ruc, Set<Expediente> expedientes, Set<Historial> historials) {
+    public Abogado(BigDecimal idAbogado, Usuario usuario, String nombre, String apellido, String direccion, String telefono, Integer ci, String ruc, Set expedientes, Set historials) {
        this.idAbogado = idAbogado;
        this.usuario = usuario;
        this.nombre = nombre;
@@ -103,18 +103,18 @@ public class Abogado  implements java.io.Serializable {
     public void setRuc(String ruc) {
         this.ruc = ruc;
     }
-    public Set<Expediente> getExpedientes() {
+    public Set getExpedientes() {
         return this.expedientes;
     }
     
-    public void setExpedientes(Set<Expediente> expedientes) {
+    public void setExpedientes(Set expedientes) {
         this.expedientes = expedientes;
     }
-    public Set<Historial> getHistorials() {
+    public Set getHistorials() {
         return this.historials;
     }
     
-    public void setHistorials(Set<Historial> historials) {
+    public void setHistorials(Set historials) {
         this.historials = historials;
     }
 

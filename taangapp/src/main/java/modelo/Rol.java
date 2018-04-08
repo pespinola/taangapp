@@ -1,5 +1,5 @@
 package modelo;
-// Generated 12-mar-2018 19:22:49 by Hibernate Tools 4.3.1
+// Generated Apr 7, 2018 6:38:18 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -14,7 +14,7 @@ public class Rol  implements java.io.Serializable {
 
      private BigDecimal idRol;
      private String descripcion;
-     private Set<Usuario> usuarios = new HashSet<Usuario>(0);
+     private Set usuarios = new HashSet(0);
 
     public Rol() {
     }
@@ -24,7 +24,7 @@ public class Rol  implements java.io.Serializable {
         this.idRol = idRol;
         this.descripcion = descripcion;
     }
-    public Rol(BigDecimal idRol, String descripcion, Set<Usuario> usuarios) {
+    public Rol(BigDecimal idRol, String descripcion, Set usuarios) {
        this.idRol = idRol;
        this.descripcion = descripcion;
        this.usuarios = usuarios;
@@ -44,11 +44,11 @@ public class Rol  implements java.io.Serializable {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    public Set<Usuario> getUsuarios() {
+    public Set getUsuarios() {
         return this.usuarios;
     }
     
-    public void setUsuarios(Set<Usuario> usuarios) {
+    public void setUsuarios(Set usuarios) {
         this.usuarios = usuarios;
     }
 

@@ -1,5 +1,5 @@
 package modelo;
-// Generated 12-mar-2018 19:22:49 by Hibernate Tools 4.3.1
+// Generated Apr 7, 2018 6:38:18 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -27,7 +27,7 @@ public class Marca  implements java.io.Serializable {
      private Date vencimiento;
      private String observacion;
      private byte[] imagenMarca;
-     private Set<Evento> eventos = new HashSet<Evento>(0);
+     private Set eventos = new HashSet(0);
 
     public Marca() {
     }
@@ -43,7 +43,7 @@ public class Marca  implements java.io.Serializable {
         this.producto = producto;
         this.titular = titular;
     }
-    public Marca(BigDecimal idMarca, Clase clase, EstadoMarca estadoMarca, Expediente expediente, Pais pais, TipoMarca tipoMarca, String producto, String titular, Date fechaPresentacion, Date fechaPublicacion, Date concesion, Date vencimiento, String observacion, byte[] imagenMarca, Set<Evento> eventos) {
+    public Marca(BigDecimal idMarca, Clase clase, EstadoMarca estadoMarca, Expediente expediente, Pais pais, TipoMarca tipoMarca, String producto, String titular, Date fechaPresentacion, Date fechaPublicacion, Date concesion, Date vencimiento, String observacion, byte[] imagenMarca, Set eventos) {
        this.idMarca = idMarca;
        this.clase = clase;
        this.estadoMarca = estadoMarca;
@@ -159,11 +159,11 @@ public class Marca  implements java.io.Serializable {
     public void setImagenMarca(byte[] imagenMarca) {
         this.imagenMarca = imagenMarca;
     }
-    public Set<Evento> getEventos() {
+    public Set getEventos() {
         return this.eventos;
     }
     
-    public void setEventos(Set<Evento> eventos) {
+    public void setEventos(Set eventos) {
         this.eventos = eventos;
     }
 

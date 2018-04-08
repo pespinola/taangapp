@@ -1,5 +1,5 @@
 package modelo;
-// Generated 12-mar-2018 19:22:49 by Hibernate Tools 4.3.1
+// Generated Apr 7, 2018 6:38:18 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -14,7 +14,7 @@ public class TipoDocumento  implements java.io.Serializable {
 
      private BigDecimal idTipoDocumento;
      private String descripcion;
-     private Set<Documento> documentos = new HashSet<Documento>(0);
+     private Set documentos = new HashSet(0);
 
     public TipoDocumento() {
     }
@@ -24,7 +24,7 @@ public class TipoDocumento  implements java.io.Serializable {
         this.idTipoDocumento = idTipoDocumento;
         this.descripcion = descripcion;
     }
-    public TipoDocumento(BigDecimal idTipoDocumento, String descripcion, Set<Documento> documentos) {
+    public TipoDocumento(BigDecimal idTipoDocumento, String descripcion, Set documentos) {
        this.idTipoDocumento = idTipoDocumento;
        this.descripcion = descripcion;
        this.documentos = documentos;
@@ -44,11 +44,11 @@ public class TipoDocumento  implements java.io.Serializable {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    public Set<Documento> getDocumentos() {
+    public Set getDocumentos() {
         return this.documentos;
     }
     
-    public void setDocumentos(Set<Documento> documentos) {
+    public void setDocumentos(Set documentos) {
         this.documentos = documentos;
     }
 

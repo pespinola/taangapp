@@ -1,5 +1,5 @@
 package modelo;
-// Generated 12-mar-2018 19:22:49 by Hibernate Tools 4.3.1
+// Generated Apr 7, 2018 6:38:18 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -14,7 +14,7 @@ public class EstadoMarca  implements java.io.Serializable {
 
      private BigDecimal idEstado;
      private String descripcion;
-     private Set<Marca> marcas = new HashSet<Marca>(0);
+     private Set marcas = new HashSet(0);
 
     public EstadoMarca() {
     }
@@ -24,7 +24,7 @@ public class EstadoMarca  implements java.io.Serializable {
         this.idEstado = idEstado;
         this.descripcion = descripcion;
     }
-    public EstadoMarca(BigDecimal idEstado, String descripcion, Set<Marca> marcas) {
+    public EstadoMarca(BigDecimal idEstado, String descripcion, Set marcas) {
        this.idEstado = idEstado;
        this.descripcion = descripcion;
        this.marcas = marcas;
@@ -44,11 +44,11 @@ public class EstadoMarca  implements java.io.Serializable {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    public Set<Marca> getMarcas() {
+    public Set getMarcas() {
         return this.marcas;
     }
     
-    public void setMarcas(Set<Marca> marcas) {
+    public void setMarcas(Set marcas) {
         this.marcas = marcas;
     }
 

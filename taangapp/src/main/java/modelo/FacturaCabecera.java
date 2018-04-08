@@ -1,5 +1,5 @@
 package modelo;
-// Generated 12-mar-2018 19:22:49 by Hibernate Tools 4.3.1
+// Generated Apr 7, 2018 6:38:18 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -21,8 +21,8 @@ public class FacturaCabecera  implements java.io.Serializable {
      private char tipo;
      private char formaPago;
      private BigDecimal iva;
-     private Set<PlanPago> planPagos = new HashSet<PlanPago>(0);
-     private Set<FacturaDetalle> facturaDetalles = new HashSet<FacturaDetalle>(0);
+     private Set planPagos = new HashSet(0);
+     private Set facturaDetalles = new HashSet(0);
 
     public FacturaCabecera() {
     }
@@ -38,7 +38,7 @@ public class FacturaCabecera  implements java.io.Serializable {
         this.formaPago = formaPago;
         this.iva = iva;
     }
-    public FacturaCabecera(BigDecimal idFactCab, Cliente cliente, long numFact, Date fecha, BigDecimal montoTotal, char tipo, char formaPago, BigDecimal iva, Set<PlanPago> planPagos, Set<FacturaDetalle> facturaDetalles) {
+    public FacturaCabecera(BigDecimal idFactCab, Cliente cliente, long numFact, Date fecha, BigDecimal montoTotal, char tipo, char formaPago, BigDecimal iva, Set planPagos, Set facturaDetalles) {
        this.idFactCab = idFactCab;
        this.cliente = cliente;
        this.numFact = numFact;
@@ -107,18 +107,18 @@ public class FacturaCabecera  implements java.io.Serializable {
     public void setIva(BigDecimal iva) {
         this.iva = iva;
     }
-    public Set<PlanPago> getPlanPagos() {
+    public Set getPlanPagos() {
         return this.planPagos;
     }
     
-    public void setPlanPagos(Set<PlanPago> planPagos) {
+    public void setPlanPagos(Set planPagos) {
         this.planPagos = planPagos;
     }
-    public Set<FacturaDetalle> getFacturaDetalles() {
+    public Set getFacturaDetalles() {
         return this.facturaDetalles;
     }
     
-    public void setFacturaDetalles(Set<FacturaDetalle> facturaDetalles) {
+    public void setFacturaDetalles(Set facturaDetalles) {
         this.facturaDetalles = facturaDetalles;
     }
 
