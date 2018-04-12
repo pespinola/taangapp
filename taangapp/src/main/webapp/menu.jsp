@@ -10,7 +10,7 @@
 <html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <%@include file="//WEB-INF/paginaCabecera.jsp" %>
+        <%@include file="paginaCabecera.jsp" %>
         
         <title>Menú - Ta'angapp</title>
 
@@ -43,7 +43,7 @@
                 <div class="col" id="linea2">
                     <ul class="nav nav-tabs" >
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Clientes</a>
+                            <a class="nav-link" href="cliente.jsp">Clientes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Expedientes</a>

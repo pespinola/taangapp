@@ -6,6 +6,9 @@
 package controlador;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 //import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,16 +27,9 @@ import modelo.UsuarioMng;
 //@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
 public class LoginServlet extends HttpServlet {
 
+     static final Logger logger = Logger.getLogger(LoginServlet.class.getName());
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     * 
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -76,6 +72,7 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect("errorLogin.jsp");
             } else {
                 sesion.setAttribute("usuario", usuario);
+                logger.log(Level.INFO, "Usuario creado" + usuario);
                 //request.getRequestDispatcher("clienteVista.jsp").forward(request, response);
                 response.sendRedirect("menu.jsp");
             }

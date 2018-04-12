@@ -59,11 +59,11 @@ Contributor(s):
     <mapping resource="modelo/PlanPago.hbm.xml"/>
     <mapping resource="modelo/Pais.hbm.xml"/>
     <mapping resource="modelo/Documento.hbm.xml"/>
-    <mapping resource="modelo/Expediente.hbm.xml"/>
     <mapping resource="modelo/Abogado.hbm.xml"/>
+    <mapping resource="modelo/Expediente.hbm.xml"/>
     <mapping resource="modelo/Historial.hbm.xml"/>
     <mapping resource="modelo/Marca.hbm.xml"/>
-    <mapping resource="modelo/TipoMarca.hbm.xml"/>
     <mapping resource="modelo/Usuario.hbm.xml"/>
+    <mapping resource="modelo/TipoMarca.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
