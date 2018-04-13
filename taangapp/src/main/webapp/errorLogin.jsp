@@ -12,7 +12,7 @@
         
         <title>Iniciar sesión - Ta'angapp</title>
 
-        <%@include file="//WEB-INF/paginaCabecera.jsp" %>
+        <%@include file="paginaCabecera.jsp" %>
         
         <link href="css/iniciarSesion.css" rel="stylesheet">
 

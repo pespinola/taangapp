@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 8, 2018 6:45:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.FacturaDetalle" table="factura_detalle" schema="public" optimistic-lock="version">
+        <id name="idFactDet" type="big_decimal">
+            <column name="id_fact_det" precision="131089" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="facturaCabecera" class="modelo.FacturaCabecera" fetch="select">
+            <column name="id_fact_cabecera" precision="131089" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tramite" class="modelo.Tramite" fetch="select">
+            <column name="id_tramite" precision="131089" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="numeroItem" type="big_decimal">
+            <column name="numero_item" precision="131089" scale="0" not-null="true" />
+        </property>
+        <property name="precio" type="big_decimal">
+            <column name="precio" precision="131089" scale="0" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="40" not-null="true" />
+        </property>
+        <property name="iva" type="big_decimal">
+            <column name="iva" precision="131089" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

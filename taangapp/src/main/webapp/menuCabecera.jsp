@@ -27,7 +27,7 @@
         <div class="col" id="linea2">
             <ul class="nav nav-tabs" >
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Clientes</a>
+                    <a class="nav-link" href="cliente.jsp">Clientes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Expedientes</a>
