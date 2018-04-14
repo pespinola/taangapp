@@ -45,7 +45,7 @@ Contributor(s):
     <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
     <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/taangapp</property>
     <property name="hibernate.connection.username">postgres</property>
-    <property name="hibernate.connection.password">admin</property>
+    <property name="hibernate.connection.password">bdatos</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <mapping resource="modelo/FacturaCabecera.hbm.xml"/>
     <mapping resource="modelo/FacturaDetalle.hbm.xml"/>

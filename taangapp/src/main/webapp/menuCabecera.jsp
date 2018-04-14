@@ -1,5 +1,5 @@
-
 <%@page import="modelo.Usuario"%>
+<link href="css/menu.css" rel="stylesheet">
 <% Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");%>
 <div class="container-fluid">
     <br>
