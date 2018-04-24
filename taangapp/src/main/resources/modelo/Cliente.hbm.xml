@@ -6,7 +6,9 @@
     <class name="modelo.Cliente" table="cliente" schema="public" optimistic-lock="version">
         <id name="idCliente" type="big_decimal">
             <column name="id_cliente" precision="131089" scale="0" />
-            <generator class="assigned" />
+            <generator class="sequence">
+                <param name="sequence">cliente_id_seq</param>
+            </generator>
         </id>
         <many-to-one name="usuario" class="modelo.Usuario" fetch="select">
             <column name="id_usuario" precision="131089" scale="0" />

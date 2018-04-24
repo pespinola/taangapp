@@ -1,6 +1,7 @@
 
 package dao;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,30 +32,32 @@ public class ClienteManager implements IOperaciones<Cliente> {
     }
 
     @Override
-    public Cliente agregarEntidad(Cliente cliente) {
+    public boolean agregarEntidad(Cliente cliente) {
         Transaction tx = null;
-        if (!session.isOpen()) {
-            this.session = HibernateUtil.getSessionFactory().openSession();
-        }
+        
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        
      
         try {
             tx = session.beginTransaction();
             session.saveOrUpdate(cliente);
             logger.info("Cliente correctamente agregado " + cliente);
             session.getTransaction().commit();
-            return cliente;
+            //return cliente;
+            return true;
         } catch (HibernateException ex) {
             logger.error("Error al guardar cliente");
             mess = ex.getMessage();
             tx.rollback();
             ex.printStackTrace();
-            cliente = null;
+            //cliente = null;
+            return false;
            
         }finally{
             session.flush();
             session.close(); 
         }
-        return cliente;
+       
     }
 
     @Override
@@ -86,7 +89,7 @@ public class ClienteManager implements IOperaciones<Cliente> {
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             trns = session.beginTransaction();
-            Cliente cli = (Cliente) session.load(Cliente.class, new Integer(id));
+            Cliente cli = (Cliente) session.load(Cliente.class, new BigDecimal(id));
             session.delete(cli);
             logger.info("Cliente eliminado correctamente" + cli);
             session.getTransaction().commit();

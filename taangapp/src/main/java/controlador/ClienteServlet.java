@@ -1,67 +1,68 @@
-///*
-// * To change this license header, choose License Headers in Project Properties.
-// * To change this template file, choose Tools | Templates
-// * and open the template in the editor.
-// */
-//package controlador;
-//
-//import com.google.gson.Gson;
-//import java.io.IOException;
-//import java.io.PrintWriter;
-//import java.math.BigDecimal;
-//import java.util.List;
-//import javax.servlet.ServletException;
-//import javax.servlet.http.HttpServlet;
-//import javax.servlet.http.HttpServletRequest;
-//import javax.servlet.http.HttpServletResponse;
-//import modelo.Cliente;
-//import modelo.ClienteMng;
-//
-///**
-// *
-// * @author Acer
-// */
-//public class ClienteServlet extends HttpServlet {
-//
-//    /**
-//     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-//     * methods.
-//     *
-//     * @param request servlet request
-//     * @param response servlet response
-//     * @throws ServletException if a servlet-specific error occurs
-//     * @throws IOException if an I/O error occurs
-//     */
-//    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//        response.setContentType("text/html;charset=UTF-8");
-//        try (PrintWriter out = response.getWriter()) {
-//            /* TODO output your page here. You may use following sample code. */
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet ClienteServlet</title>");            
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>Servlet ClienteServlet at " + request.getContextPath() + "</h1>");
-//            out.println("</body>");
-//            out.println("</html>");
-//        }
-//    }
-//
-//    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-//    /**
-//     * Handles the HTTP <code>GET</code> method.
-//     *
-//     * @param request servlet request
-//     * @param response servlet response
-//     * @throws ServletException if a servlet-specific error occurs
-//     * @throws IOException if an I/O error occurs
-//     */
-//    @Override
-//    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//        
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package controlador;
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import modelo.Cliente;
+import dao.ClienteManager;
+
+import javax.servlet.http.HttpSession;
+
+/**
+ *
+ * @author Acer
+ */
+public class ClienteServlet extends HttpServlet {
+
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet ClienteServlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet ClienteServlet at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
+    }
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
 //        response.setContentType("text/json;charset=UTF-8");
 //        response.setHeader("Cache-Control", "no-cache");
 //       //validar parametros FALTA
@@ -70,7 +71,7 @@
 //       int desde = Integer.parseInt(request.getParameter("desde"));
 //       int salto = Integer.parseInt(request.getParameter("salto"));
 //       
-//       ClienteMng cm = new ClienteMng();
+//       ClienteManager cm = null;
 //       
 //       List<Cliente> lista = cm.getClientes(desde, salto);
 //       
@@ -113,95 +114,134 @@
 //            
 //           
 //        }
-//       
-//        
-//    }
-//
-//    /**
-//     * Handles the HTTP <code>POST</code> method.
-//     *
-//     * @param request servlet request
-//     * @param response servlet response
-//     * @throws ServletException if a servlet-specific error occurs
-//     * @throws IOException if an I/O error occurs
-//     */
-//    @Override
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//        
-//        response.setContentType("text/json;charset=UTF-8");
-//        response.setHeader("Cache-Control", "no-cache");
-//        
-//        String operacion = request.getParameter("operacion");
-//        
-//        if(operacion.equals("eliminar")){
-//            
-//            String idCliente  = request.getParameter("idCliente");
-//            
-//            int nroCliente = Integer.parseInt(idCliente);
-//            
-//            ClienteMng cm = new ClienteMng();
-//            
-//            String resultado = cm.deleteCliente(nroCliente);
-//            
-//            String mensaje;
-//            if(resultado == null){
-//                mensaje = "{ \"eliminado\":true }";
-//            }else{
-//                mensaje = "{ \"eliminado\":false ,"
-//                        + " \"motivo\":"+resultado+"}";
-//            }
-//            try (PrintWriter out = response.getWriter()) {
-//                out.print(mensaje);
-//            }
-//        }
-//        if(operacion.equals("modificar")){
-//            String idCliente  = request.getParameter("idCliente");
-//            String idUsuario  = request.getParameter("idUsuario");
-//            String nombre  = request.getParameter("nombre");
-//            String apellido  = request.getParameter("apellido");
-//            String direccion  = request.getParameter("direccion");
-//            String telefono  = request.getParameter("telefono");
-//            String ci  = request.getParameter("ci");
-//            String estado  = request.getParameter("estado");
-//            String ruc  = request.getParameter("ruc");
-//            
-//            
-//            ClienteMng cm = new ClienteMng();
-//            
-//            Cliente cliente = cm.getCliente(Integer.parseInt(idCliente));
-//            
-//            cliente.setNombre(nombre);
-//            cliente.setApellido(apellido);
-//            cliente.setDireccion(direccion);
-//            cliente.setTelefono(telefono);
-//            cliente.setCi(Integer.parseInt(ci));
-//            cliente.setEstado(estado);
-//            cliente.setRuc(ruc);
-//            
-//            String resultado = cm.editCliente(cliente);
-//            String mensaje;
-//            
-//            if(resultado == null){
-//                mensaje = "{ \"modificado\":true }";
-//            }else{
-//                mensaje = "{ \"modificado\":false ,"
-//                        + " \"motivo\":"+resultado+"}";
-//            }
-//            try (PrintWriter out = response.getWriter()) {
-//                out.print(mensaje);
-//            }
-//        }
-//    }
-//
-//    /**
-//     * Returns a short description of the servlet.
-//     *
-//     * @return a String containing servlet description
-//     */
-//    @Override
-//    public String getServletInfo() {
-//        return "Short description";
-//    }// </editor-fold>
-//
-//}
+       
+        
+    }
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        
+        HttpSession sesion = request.getSession();
+        ClienteManager cm = new ClienteManager();
+        
+        if( request.getParameter("eliminar") != null){
+            
+            String idCliente  = request.getParameter("idCliente");
+            
+            int nroCliente = Integer.parseInt(idCliente);
+            
+            
+            
+            Boolean resultado = cm.eliminarEntidad(nroCliente); 
+            
+            
+            String mensaje;
+            if(resultado == true){
+                
+                mensaje="El registro se eliminó correctamente";
+            }else{
+               
+                mensaje="El registro no se pudo eliminar";
+            }
+            sesion.setAttribute("mensaje",mensaje);
+            sesion.setAttribute("exito",resultado);
+            response.sendRedirect("cliente.jsp");
+            
+        }
+        if(request.getParameter("editar") != null){
+            String idCliente  = request.getParameter("idCliente");
+            String nombre  = request.getParameter("nombre");
+            String apellido  = request.getParameter("apellido");
+            String direccion  = request.getParameter("direccion");
+            String telefono  = request.getParameter("telefono");
+            String ci  = request.getParameter("ci");
+            String estado  = request.getParameter("estado");
+            String ruc  = request.getParameter("ruc");
+
+            System.out.println(direccion);
+            
+            Cliente cliente = cm.consultarPorId(Integer.parseInt(idCliente));
+            
+            cliente.setNombre(nombre);
+            cliente.setApellido(apellido);
+            cliente.setDireccion(direccion);
+            cliente.setTelefono(telefono);
+            cliente.setCi(Integer.parseInt(ci));
+            cliente.setEstado(estado);
+            cliente.setRuc(ruc);
+            
+            Boolean resultado = cm.modificarEntidad(cliente);
+            
+            
+            String mensaje;
+            if(resultado == true){
+                
+                mensaje="El registro se editó correctamente";
+            }else{
+               
+                mensaje="El registro no se pudo editar";
+            }
+            sesion.setAttribute("mensaje",mensaje);
+            sesion.setAttribute("exito",resultado);
+            response.sendRedirect("cliente.jsp");
+        }
+        
+        if(request.getParameter("agregar") != null){
+           
+            String nombre  = request.getParameter("nombre");
+            String apellido  = request.getParameter("apellido");
+            String direccion  = request.getParameter("direccion");
+            String telefono  = request.getParameter("telefono");
+            String ci  = request.getParameter("ci");
+            String estado  = request.getParameter("estado");
+            String ruc  = request.getParameter("ruc");
+
+            
+            Cliente cliente = new Cliente();
+            
+            cliente.setNombre(nombre);
+            cliente.setApellido(apellido);
+            cliente.setDireccion(direccion);
+            cliente.setTelefono(telefono);
+            cliente.setCi(Integer.parseInt(ci));
+            cliente.setEstado(estado);
+            cliente.setRuc(ruc);
+            
+            Boolean resultado = cm.agregarEntidad(cliente); 
+            
+            
+            String mensaje;
+            if(resultado == true){
+                
+                mensaje="El registro se agregó correctamente";
+            }else{
+               
+                mensaje="El registro no se pudo agregar";
+            }
+            sesion.setAttribute("mensaje",mensaje);
+            sesion.setAttribute("exito",resultado);
+            response.sendRedirect("cliente.jsp");
+        }
+    }
+
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
+
+}

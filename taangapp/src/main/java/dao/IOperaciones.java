@@ -10,7 +10,8 @@ import java.util.List;
  */
 public interface IOperaciones<T> {
     
-    public T agregarEntidad(T entidad);
+    //public T agregarEntidad(T entidad);
+    public boolean agregarEntidad(T entidad);
     public boolean modificarEntidad(T entidad);
     public boolean eliminarEntidad(int id);
     public T consultarPorId(int id);
